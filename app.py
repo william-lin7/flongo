@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from pprint import pprint
 from bson.json_util import loads
