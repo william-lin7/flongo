@@ -10,13 +10,6 @@ app = Flask(__name__)
 client = MongoClient()
 db = client.WhoLetTheDogsOut
 meteorites = db.meteorites
-meteorites.delete_many({})
-
-with open("meteorites.json", 'r') as file:
-    data = json.load(file)
-    for member in data:
-        id = meteorites.insert_one(loads(json.dumps(member)))
-        print(id)
 
 @app.route("/")
 def home():
